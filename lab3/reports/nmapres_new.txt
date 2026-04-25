@@ -1,0 +1,11 @@
+# Nmap 7.95 scan initiated Thu Dec 11 15:13:15 2025 as: /snap/nmap/4171/usr/bin/nmap -sV -p 8080 --script vuln -oN reports/nmapres_new.txt -oX reports/nmapres_new.xml localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00015s latency).
+Other addresses for localhost (not scanned): ::1
+rDNS record for 127.0.0.1: localhost.localdomain
+
+PORT     STATE  SERVICE    VERSION
+8080/tcp closed http-proxy
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Dec 11 15:13:25 2025 -- 1 IP address (1 host up) scanned in 10.15 seconds

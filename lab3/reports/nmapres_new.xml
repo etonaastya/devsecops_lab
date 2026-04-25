@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///snap/nmap/4171/usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Thu Dec 11 15:13:15 2025 as: /snap/nmap/4171/usr/bin/nmap -sV -p 8080 -&#45;script vuln -oN reports/nmapres_new.txt -oX reports/nmapres_new.xml localhost -->
+<nmaprun scanner="nmap" args="/snap/nmap/4171/usr/bin/nmap -sV -p 8080 -&#45;script vuln -oN reports/nmapres_new.txt -oX reports/nmapres_new.xml localhost" start="1765465995" startstr="Thu Dec 11 15:13:15 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="8080"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1765466005" endtime="1765466005"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="127.0.0.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="localhost" type="user"/>
+<hostname name="localhost.localdomain" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="8080"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+</ports>
+<times srtt="149" rttvar="3785" to="100000"/>
+</host>
+<runstats><finished time="1765466005" timestr="Thu Dec 11 15:13:25 2025" summary="Nmap done at Thu Dec 11 15:13:25 2025; 1 IP address (1 host up) scanned in 10.15 seconds" elapsed="10.15" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

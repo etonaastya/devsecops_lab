@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./source
+      dockerfile: Dockerfile
+    image: hello-appsec-world:local
+    container_name: hello-web
+    ports:
+      - "8000:8000"          # host:container
+    # Безопасные настройки:
+    user: "1001:1001"      # явное указание UID:GID 
+    read_only: true        # ФС только для чтения (кроме /tmp)
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL                # Убираем все capabilities
+    restart: unless-stopped
+
