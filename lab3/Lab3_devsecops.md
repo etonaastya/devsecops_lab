@@ -360,3 +360,28 @@ drwxrwxr-x 3 vboxuser vboxuser 4096 Dec 11 15:16 ..
  ```
 - [x]  7. Оформить `README.md` по аналогии и использовать `shield`, etc.
 - [x]  8. Составить `gist` отчет и отправить ссылку личным сообщением
+
+### Защита результатов сканирования
+```bash 
+# 1. Строгие права доступа — только владелец читает/пишет
+$ chmod 600 reports/nmapres.txt
+$ ls -la reports/nmapres.txt
+-rw------- 1 user user 601 Dec 11 15:30 reports/nmapres.txt
+
+# 2. Исключение из репозитория
+$ echo "nmapres*.txt" >> .gitignore
+$ echo "reports/*.html" >> .gitignore
+$ git add .gitignore
+$ git commit -S -m "chore: ignore nmap scan results"
+```
+
+###  Сетевая информация
+``` bash 
+$ ip addr show enp0s3
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> 
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic enp0s3
+
+$ nmap -sn 10.0.2.0/24
+# Обнаружен 1 хост: 10.0.2.15 (текущая ВМ)
+# Вывод: в подсети нет других активных устройств (изолированная тестовая среда)
+```
