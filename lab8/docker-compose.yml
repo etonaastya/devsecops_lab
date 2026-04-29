@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vulnerable-app:
+    build: ./vulnerable-app
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./vulnerable-app:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
